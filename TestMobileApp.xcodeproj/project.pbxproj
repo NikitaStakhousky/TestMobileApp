@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E33751529C1E77D00C5A74D /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E33751429C1E77D00C5A74D /* LogInVC.swift */; };
 		7E5C19E329BFB8560067BC37 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C19E229BFB8560067BC37 /* AuthViewModel.swift */; };
 		7E5C19E629BFB9410067BC37 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C19E529BFB9410067BC37 /* Color.swift */; };
 		7E5C19E929BFBC7F0067BC37 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C19E829BFBC7F0067BC37 /* RoundedButton.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E33751429C1E77D00C5A74D /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		7E5C19E229BFB8560067BC37 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		7E5C19E529BFB9410067BC37 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7E5C19E829BFBC7F0067BC37 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			children = (
 				7E79D91A29BF98CE00533DAD /* AuthVC.swift */,
 				7E5C19E229BFB8560067BC37 /* AuthViewModel.swift */,
+				7E33751429C1E77D00C5A74D /* LogInVC.swift */,
 			);
 			path = AuthFeature;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				7E5C19EB29BFC07C0067BC37 /* TextFieldModifier.swift in Sources */,
 				7E79D91B29BF98CE00533DAD /* AuthVC.swift in Sources */,
 				7E5C19E929BFBC7F0067BC37 /* RoundedButton.swift in Sources */,
+				7E33751529C1E77D00C5A74D /* LogInVC.swift in Sources */,
 				7E5C19E629BFB9410067BC37 /* Color.swift in Sources */,
 				7E79D91929BF98CE00533DAD /* TestMobileAppApp.swift in Sources */,
 				7E5C19E329BFB8560067BC37 /* AuthViewModel.swift in Sources */,
