@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E33751529C1E77D00C5A74D /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E33751429C1E77D00C5A74D /* LogInVC.swift */; };
-		7E5C19E329BFB8560067BC37 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C19E229BFB8560067BC37 /* AuthViewModel.swift */; };
+		7E33751729C1F4B200C5A74D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7E33751629C1F4B200C5A74D /* FirebaseFirestore */; };
 		7E5C19E629BFB9410067BC37 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C19E529BFB9410067BC37 /* Color.swift */; };
 		7E5C19E929BFBC7F0067BC37 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C19E829BFBC7F0067BC37 /* RoundedButton.swift */; };
 		7E5C19EB29BFC07C0067BC37 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C19EA29BFC07C0067BC37 /* TextFieldModifier.swift */; };
@@ -18,11 +18,11 @@
 		7E79D91D29BF98D000533DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E79D91C29BF98D000533DAD /* Assets.xcassets */; };
 		7E79D92029BF98D000533DAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E79D91F29BF98D000533DAD /* Preview Assets.xcassets */; };
 		7EABAB8729C0D40200182FFB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7EABAB8629C0D40200182FFB /* FirebaseAuth */; };
+		7ECCEFB129C460CA00FA4A06 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECCEFB029C460CA00FA4A06 /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E33751429C1E77D00C5A74D /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
-		7E5C19E229BFB8560067BC37 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		7E5C19E529BFB9410067BC37 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7E5C19E829BFBC7F0067BC37 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		7E5C19EA29BFC07C0067BC37 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
@@ -32,6 +32,7 @@
 		7E79D91A29BF98CE00533DAD /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		7E79D91C29BF98D000533DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E79D91F29BF98D000533DAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7ECCEFB029C460CA00FA4A06 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EABAB8729C0D40200182FFB /* FirebaseAuth in Frameworks */,
+				7E33751729C1F4B200C5A74D /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				7E79D91A29BF98CE00533DAD /* AuthVC.swift */,
-				7E5C19E229BFB8560067BC37 /* AuthViewModel.swift */,
 				7E33751429C1E77D00C5A74D /* LogInVC.swift */,
 			);
 			path = AuthFeature;
@@ -94,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				7E6EEBEE29C1E4B000EA2354 /* GoogleService-Info.plist */,
+				7ECCEFAF29C460AA00FA4A06 /* FirebaseManager */,
 				7E5C19E729BFBC490067BC37 /* CommonUI */,
 				7E5C19E129BFB7D00067BC37 /* AuthFeature */,
 				7E5C19E429BFB9260067BC37 /* Extension */,
@@ -119,6 +121,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7ECCEFAF29C460AA00FA4A06 /* FirebaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				7ECCEFB029C460CA00FA4A06 /* AuthService.swift */,
+			);
+			path = FirebaseManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +147,7 @@
 			name = TestMobileApp;
 			packageProductDependencies = (
 				7EABAB8629C0D40200182FFB /* FirebaseAuth */,
+				7E33751629C1F4B200C5A74D /* FirebaseFirestore */,
 			);
 			productName = TestMobileApp;
 			productReference = 7E79D91529BF98CE00533DAD /* TestMobileApp.app */;
@@ -201,8 +212,8 @@
 				7E5C19E929BFBC7F0067BC37 /* RoundedButton.swift in Sources */,
 				7E33751529C1E77D00C5A74D /* LogInVC.swift in Sources */,
 				7E5C19E629BFB9410067BC37 /* Color.swift in Sources */,
+				7ECCEFB129C460CA00FA4A06 /* AuthService.swift in Sources */,
 				7E79D91929BF98CE00533DAD /* TestMobileAppApp.swift in Sources */,
-				7E5C19E329BFB8560067BC37 /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +427,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7E33751629C1F4B200C5A74D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E5C19EE29C0CFE30067BC37 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		7EABAB8629C0D40200182FFB /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7E5C19EE29C0CFE30067BC37 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

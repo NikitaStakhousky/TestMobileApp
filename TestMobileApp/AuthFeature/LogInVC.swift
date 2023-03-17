@@ -9,9 +9,12 @@ import SwiftUI
 
 struct LogInVC: View {
 
-  @State var firstName = ""
+  @State var email = ""
   @State var password = ""
   @State var showHidePassword = false
+  @State var alert = false
+  @State var message = ""
+  @Binding var show: Bool
 
   var body: some View {
     VStack {
@@ -20,13 +23,25 @@ struct LogInVC: View {
         .padding(.bottom, 80)
       logInTextFields()
         .padding(.bottom, 100)
-      RoundedButton(action: {}, text: "Log In")
+      RoundedButton(action: {
+        AuthService.shared.signIn(email: email, password: password) { result in
+          switch result {
+          case .success(let success):
+            print("succes login")
+          case .failure(let failure):
+            alert.toggle()
+          }
+        }
+      }, text: "Log In")
+    }
+    .alert(isPresented: $alert) {
+      Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("Ok")))
     }
   }
 
   private func logInTextFields() -> some View {
     VStack(spacing: 34) {
-      TextField("First Name", text: $firstName)
+      TextField("First Name", text: $email)
         .modifier(TextFieldModifier())
       ZStack {
         if showHidePassword {
@@ -48,11 +63,5 @@ struct LogInVC: View {
       }
       .modifier(TextFieldModifier())
     }
-  }
-}
-
-struct LogInVC_Previews: PreviewProvider {
-  static var previews: some View {
-    LogInVC()
   }
 }
