@@ -8,33 +8,54 @@
 import SwiftUI
 
 struct AuthVC: View {
-  
-  @EnvironmentObject var viewModel: AuthViewModel
 
-  @State var text = ""
+  @State var email = ""
+  @State var password = ""
+  @State var firstName = ""
+  @State var alert = false
+  @State var message = ""
+  @State var show = false
 
   var body: some View {
-    VStack {
-      Text("Sign In")
-        .font(.system(size: 25, weight: .semibold))
-        .shadow(radius: 1)
-        .padding(.bottom, 78)
-      textFields()
-        .padding(.bottom, 46)
-      RoundedButton(action: {}, text: "Sign In")
-      logIn()
-      logInWith()
+    NavigationView {
+      VStack {
+        Text("Sign In")
+          .font(.system(size: 25, weight: .semibold))
+          .shadow(radius: 1)
+          .padding(.bottom, 78)
+        textFields()
+          .padding(.bottom, 46)
+        RoundedButton(action: {
+          AuthService.shared.signUp(email: email, password: password) { result in
+            switch result {
+            case .success(let user):
+              print("auth succes")
+            case .failure(let error):
+              print("auth error")
+              alert.toggle()
+            }
+          }
+        }, text: "Sign In")
+        logIn()
+        logInWith()
+      }
+      .padding()
+      .alert(isPresented: $alert) {
+        Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("Ok")))
+      }
+      .fullScreenCover(isPresented: $show) {
+        LogInVC(show: $show)
+      }
     }
-    .padding()
   }
 
   private func textFields() -> some View {
     VStack(spacing: 34) {
-      TextField("First Name", text: $text)
+      TextField("First Name", text: $firstName)
         .modifier(TextFieldModifier())
-      SecureField("Password", text: $text)
+      SecureField("Password", text: $password)
         .modifier(TextFieldModifier())
-      TextField("Email", text: $text)
+      TextField("Email", text: $email)
         .modifier(TextFieldModifier())
     }
   }
@@ -44,7 +65,7 @@ struct AuthVC: View {
       Text("Already have an account?")
         .font(.system(size: 8, weight: .light))
       Button {
-        //
+        show.toggle()
       } label: {
         Text("Log in")
           .font(.system(size: 8, weight: .semibold))
@@ -84,11 +105,5 @@ struct AuthVC: View {
       }
     }
     .padding(.top, 82)
-  }
-}
-
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    AuthVC()
   }
 }
