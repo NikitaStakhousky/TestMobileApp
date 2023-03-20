@@ -10,7 +10,8 @@ import SwiftUI
 struct ProfileVC: View {
   @EnvironmentObject var viewModel: ProfileViewModel
   var body: some View {
-    VStack() {
+    ScrollView {
+    VStack {
       profilePhoto()
         .padding(.bottom, 20)
       Text("Mikita Stakhousy")
@@ -18,7 +19,7 @@ struct ProfileVC: View {
       ProfileRoundedButton {
         //
       }
-      .padding(.bottom, 14)
+      .padding(.bottom, 24)
       VStack(spacing: 24) {
         ForEach(viewModel.data) { item in
           HStack {
@@ -29,11 +30,14 @@ struct ProfileVC: View {
             } label: {
               Image(systemName: item.secondImage ?? "")
                 .foregroundColor(Color.black)
-            }.padding(.trailing, 46)
+            }.padding(.trailing, 26)
           }
         }
       }
     }
+  }
+     .padding()
+     .background(Color.backgroundGray)
   }
 
   private func profilePhoto() -> some View {

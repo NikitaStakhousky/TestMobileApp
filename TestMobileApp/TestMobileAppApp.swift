@@ -24,7 +24,7 @@ struct TestMobileAppApp: App {
   
     var body: some Scene {
         WindowGroup {
-          AuthVC().environmentObject(AuthViewModel())
+         MainTabBarView(selectedTab: "person")
         }
     }
 }
