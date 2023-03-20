@@ -19,6 +19,11 @@
 		7E79D92029BF98D000533DAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E79D91F29BF98D000533DAD /* Preview Assets.xcassets */; };
 		7EABAB8729C0D40200182FFB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7EABAB8629C0D40200182FFB /* FirebaseAuth */; };
 		7ECCEFB129C460CA00FA4A06 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECCEFB029C460CA00FA4A06 /* AuthService.swift */; };
+		7ECCEFB429C478A200FA4A06 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECCEFB329C478A200FA4A06 /* ProfileVC.swift */; };
+		7ECCEFB629C47BDC00FA4A06 /* ProfileRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECCEFB529C47BDC00FA4A06 /* ProfileRoundedButton.swift */; };
+		7ECCEFB829C481DB00FA4A06 /* ProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECCEFB729C481DB00FA4A06 /* ProfileItem.swift */; };
+		7ECCEFBA29C4883100FA4A06 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECCEFB929C4883100FA4A06 /* ProfileModel.swift */; };
+		7ECCEFBC29C4891100FA4A06 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECCEFBB29C4891100FA4A06 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +38,11 @@
 		7E79D91C29BF98D000533DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E79D91F29BF98D000533DAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7ECCEFB029C460CA00FA4A06 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		7ECCEFB329C478A200FA4A06 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		7ECCEFB529C47BDC00FA4A06 /* ProfileRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoundedButton.swift; sourceTree = "<group>"; };
+		7ECCEFB729C481DB00FA4A06 /* ProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItem.swift; sourceTree = "<group>"; };
+		7ECCEFB929C4883100FA4A06 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		7ECCEFBB29C4891100FA4A06 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,7 @@
 			children = (
 				7E5C19E829BFBC7F0067BC37 /* RoundedButton.swift */,
 				7E5C19EA29BFC07C0067BC37 /* TextFieldModifier.swift */,
+				7ECCEFB529C47BDC00FA4A06 /* ProfileRoundedButton.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -98,6 +109,7 @@
 				7ECCEFAF29C460AA00FA4A06 /* FirebaseManager */,
 				7E5C19E729BFBC490067BC37 /* CommonUI */,
 				7E5C19E129BFB7D00067BC37 /* AuthFeature */,
+				7ECCEFB229C4788600FA4A06 /* ProfileFeature */,
 				7E5C19E429BFB9260067BC37 /* Extension */,
 				7E79D91829BF98CE00533DAD /* TestMobileAppApp.swift */,
 				7E79D91C29BF98D000533DAD /* Assets.xcassets */,
@@ -127,6 +139,17 @@
 				7ECCEFB029C460CA00FA4A06 /* AuthService.swift */,
 			);
 			path = FirebaseManager;
+			sourceTree = "<group>";
+		};
+		7ECCEFB229C4788600FA4A06 /* ProfileFeature */ = {
+			isa = PBXGroup;
+			children = (
+				7ECCEFB329C478A200FA4A06 /* ProfileVC.swift */,
+				7ECCEFB729C481DB00FA4A06 /* ProfileItem.swift */,
+				7ECCEFB929C4883100FA4A06 /* ProfileModel.swift */,
+				7ECCEFBB29C4891100FA4A06 /* ProfileViewModel.swift */,
+			);
+			path = ProfileFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,8 +232,13 @@
 			files = (
 				7E5C19EB29BFC07C0067BC37 /* TextFieldModifier.swift in Sources */,
 				7E79D91B29BF98CE00533DAD /* AuthVC.swift in Sources */,
+				7ECCEFB629C47BDC00FA4A06 /* ProfileRoundedButton.swift in Sources */,
+				7ECCEFBA29C4883100FA4A06 /* ProfileModel.swift in Sources */,
 				7E5C19E929BFBC7F0067BC37 /* RoundedButton.swift in Sources */,
+				7ECCEFB829C481DB00FA4A06 /* ProfileItem.swift in Sources */,
+				7ECCEFBC29C4891100FA4A06 /* ProfileViewModel.swift in Sources */,
 				7E33751529C1E77D00C5A74D /* LogInVC.swift in Sources */,
+				7ECCEFB429C478A200FA4A06 /* ProfileVC.swift in Sources */,
 				7E5C19E629BFB9410067BC37 /* Color.swift in Sources */,
 				7ECCEFB129C460CA00FA4A06 /* AuthService.swift in Sources */,
 				7E79D91929BF98CE00533DAD /* TestMobileAppApp.swift in Sources */,
