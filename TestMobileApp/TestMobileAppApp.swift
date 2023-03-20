@@ -24,7 +24,7 @@ struct TestMobileAppApp: App {
   
     var body: some Scene {
         WindowGroup {
-          ProfileVC().environmentObject(ProfileViewModel())
+          AuthVC().environmentObject(AuthViewModel())
         }
     }
 }

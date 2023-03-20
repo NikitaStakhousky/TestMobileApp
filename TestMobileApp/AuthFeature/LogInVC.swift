@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LogInVC: View {
 
+  @EnvironmentObject private var viewModel: AuthViewModel
   @State var email = ""
   @State var password = ""
   @State var showHidePassword = false
@@ -29,6 +30,11 @@ struct LogInVC: View {
           case .success(let success):
             print("succes login")
           case .failure(let failure):
+            if !viewModel.textFieldValidatorEmail(email) {
+              message = "email address entered incorrectly"
+            } else {
+              message = "incorrect data \(failure.localizedDescription)"
+            }
             alert.toggle()
           }
         }
