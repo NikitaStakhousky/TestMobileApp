@@ -9,12 +9,13 @@ import SwiftUI
 
 struct AuthVC: View {
 
-  @State var email = ""
-  @State var password = ""
-  @State var firstName = ""
-  @State var alert = false
-  @State var message = ""
-  @State var show = false
+  @EnvironmentObject private var viewModel: AuthViewModel
+  @State private var email = ""
+  @State private var password = ""
+  @State private var firstName = ""
+  @State private var alert = false
+  @State private var message = ""
+  @State private var show = false
 
   var body: some View {
     NavigationView {
@@ -31,7 +32,11 @@ struct AuthVC: View {
             case .success(let user):
               print("auth succes")
             case .failure(let error):
-              print("auth error")
+              if !viewModel.textFieldValidatorEmail(email) {
+                message = "email address entered incorrectly"
+              } else {
+                message = "incorrect data"
+              }
               alert.toggle()
             }
           }
