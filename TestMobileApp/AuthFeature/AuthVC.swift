@@ -16,6 +16,7 @@ struct AuthVC: View {
   @State private var alert = false
   @State private var message = ""
   @State private var show = false
+  @State private var isTabViewShow = false
 
   var body: some View {
     NavigationView {
@@ -31,6 +32,7 @@ struct AuthVC: View {
             switch result {
             case .success(let user):
               print("auth succes")
+              isTabViewShow.toggle()
             case .failure(let error):
               if !viewModel.textFieldValidatorEmail(email) {
                 message = "email address entered incorrectly"
@@ -50,6 +52,9 @@ struct AuthVC: View {
       }
       .fullScreenCover(isPresented: $show) {
         LogInVC(show: $show)
+      }
+      .fullScreenCover(isPresented: $isTabViewShow) {
+        MainTabBarView(selectedTab: "person")
       }
     }
   }
