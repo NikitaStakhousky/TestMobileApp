@@ -24,7 +24,12 @@ struct TestMobileAppApp: App {
   
     var body: some Scene {
         WindowGroup {
-         MainTabBarView(selectedTab: "person")
+
+          if let user = AuthService.shared.myUser {
+            MainTabBarView(viewModel: MainTabBarViewModel(user: user))
+          } else {
+            AuthVC(viewModel: ProfileViewModel(currentUser: CurrentUser(photo: "", name: "")))
+          }
         }
     }
 }

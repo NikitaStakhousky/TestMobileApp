@@ -9,12 +9,12 @@ import SwiftUI
 
 struct LogInVC: View {
 
-  @EnvironmentObject private var viewModel: AuthViewModel
   @State var email = ""
   @State var password = ""
   @State var showHidePassword = false
   @State var alert = false
   @State var message = ""
+  @State var isTabViewShow = false
   @Binding var show: Bool
 
   var body: some View {
@@ -29,16 +29,23 @@ struct LogInVC: View {
           switch result {
           case .success(let success):
             print("succes login")
+            isTabViewShow.toggle()
           case .failure(let failure):
-            if !viewModel.textFieldValidatorEmail(email) {
+            if !AuthViewModel.shared.textFieldValidatorEmail(email) {
               message = "email address entered incorrectly"
             } else {
               message = "incorrect data \(failure.localizedDescription)"
             }
+            UserDefaults.standard.set(true, forKey: "status")
+            NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
             alert.toggle()
           }
         }
       }, text: "Log In")
+    }
+    .fullScreenCover(isPresented: $isTabViewShow) {
+      let mainTabBarViewModel = MainTabBarViewModel(user: AuthService.shared.myUser!)
+      MainTabBarView(viewModel: mainTabBarViewModel)
     }
     .alert(isPresented: $alert) {
       Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("Ok")))
@@ -47,7 +54,7 @@ struct LogInVC: View {
 
   private func logInTextFields() -> some View {
     VStack(spacing: 34) {
-      TextField("First Name", text: $email)
+      TextField("Email", text: $email)
         .modifier(TextFieldModifier())
       ZStack {
         if showHidePassword {

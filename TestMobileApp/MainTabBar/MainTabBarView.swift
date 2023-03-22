@@ -9,14 +9,17 @@ import SwiftUI
 
 
 struct MainTabBarView: View {
-    @State var selectedTab: String
+
+    var viewModel: MainTabBarViewModel
+    @State var selectedTab: String = "person"
+
     var tab = ["house", "heart", "cart", "bubble.left", "person"]
 
     var body: some View {
 
       ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
         TabView(selection: $selectedTab) {
-          ProfileVC().environmentObject(ProfileViewModel())
+          ProfileVC(viewModel: ProfileViewModel(currentUser: CurrentUser(photo: "", name: "")))
             .tag("person")
           Text("Hello world")
             .tag("cart")
@@ -59,8 +62,8 @@ struct TabButton: View {
   }
 }
 
-struct MainTabBarView_Previews: PreviewProvider {
-    static var previews: some View {
-      MainTabBarView(selectedTab: "person")
-    }
-}
+//struct MainTabBarView_Previews: PreviewProvider {
+//    static var previews: some View {
+//      MainTabBarView(viewModel: MainTabBarViewModel(user: User()))
+//    }
+//}
