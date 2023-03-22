@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct ProfileVC: View {
-  @EnvironmentObject var viewModel: ProfileViewModel
+  
+  @StateObject var viewModel: ProfileViewModel
+  @State var showLogin = false
+
   var body: some View {
     ScrollView {
     VStack {
       profilePhoto()
         .padding(.bottom, 20)
-      Text("Mikita Stakhousy")
+      Text(viewModel.currentUser.name)
         .padding(.bottom, 38)
       ProfileRoundedButton {
-        //
+       //
       }
       .padding(.bottom, 24)
       VStack(spacing: 24) {
         ForEach(viewModel.data) { item in
           HStack {
-            ProfileItem(action: {}, item: item)
+            ProfileItem(action: {
+              AuthService.shared.signOut()
+              showLogin.toggle()
+            }, item: item)
             Spacer()
             Button {
               //
@@ -36,9 +42,16 @@ struct ProfileVC: View {
       }
     }
   }
+    .onAppear {
+      viewModel.getProfile()
+    }
+    .fullScreenCover(isPresented: $showLogin, content: {
+      AuthVC(viewModel: viewModel)
+    })
      .padding()
      .background(Color.backgroundGray)
   }
+
 
   private func profilePhoto() -> some View {
     Button {
@@ -59,6 +72,6 @@ struct ProfileVC: View {
 
 struct ProfileVC_Previews: PreviewProvider {
   static var previews: some View {
-    ProfileVC()
+    ProfileVC(viewModel: ProfileViewModel(currentUser: CurrentUser(photo: "", name: "Nikita")))
   }
 }

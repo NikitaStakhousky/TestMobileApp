@@ -7,8 +7,12 @@
 
 import Foundation
 
-final class AuthViewModel: ObservableObject {
+final class AuthViewModel {
 
+  static let shared = AuthViewModel()
+
+  private init() {}
+  
   func textFieldValidatorEmail(_ string: String) -> Bool {
       if string.count > 100 {
           return false

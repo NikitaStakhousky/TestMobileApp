@@ -9,10 +9,9 @@ import SwiftUI
 
 struct AuthVC: View {
 
-  @EnvironmentObject private var viewModel: AuthViewModel
+  @StateObject var viewModel: ProfileViewModel
   @State private var email = ""
   @State private var password = ""
-  @State private var firstName = ""
   @State private var alert = false
   @State private var message = ""
   @State private var show = false
@@ -32,13 +31,16 @@ struct AuthVC: View {
             switch result {
             case .success(let user):
               print("auth succes")
+              viewModel.setProfile()
               isTabViewShow.toggle()
             case .failure(let error):
-              if !viewModel.textFieldValidatorEmail(email) {
+              if !AuthViewModel.shared.textFieldValidatorEmail(email) {
                 message = "email address entered incorrectly"
               } else {
                 message = "incorrect data"
               }
+              UserDefaults.standard.set(true, forKey: "status")
+              NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
               alert.toggle()
             }
           }
@@ -54,14 +56,15 @@ struct AuthVC: View {
         LogInVC(show: $show)
       }
       .fullScreenCover(isPresented: $isTabViewShow) {
-        MainTabBarView(selectedTab: "person")
+        let mainTabBarViewModel = MainTabBarViewModel(user: AuthService.shared.myUser!)
+        MainTabBarView(viewModel: mainTabBarViewModel)
       }
     }
   }
 
   private func textFields() -> some View {
     VStack(spacing: 34) {
-      TextField("First Name", text: $firstName)
+      TextField("First Name", text: $viewModel.currentUser.name)
         .modifier(TextFieldModifier())
       SecureField("Password", text: $password)
         .modifier(TextFieldModifier())

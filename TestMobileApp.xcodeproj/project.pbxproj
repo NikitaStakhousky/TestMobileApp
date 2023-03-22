@@ -19,6 +19,9 @@
 		7E79D92029BF98D000533DAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E79D91F29BF98D000533DAD /* Preview Assets.xcassets */; };
 		7EA67D1429C8984E0089D6DF /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA67D1329C8984E0089D6DF /* AuthViewModel.swift */; };
 		7EA67D1729C8A5590089D6DF /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA67D1629C8A5590089D6DF /* MainTabBarView.swift */; };
+		7EA67D1B29C9EC500089D6DF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA67D1A29C9EC500089D6DF /* UserModel.swift */; };
+		7EA67D1D29C9ED890089D6DF /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA67D1C29C9ED890089D6DF /* DatabaseService.swift */; };
+		7EA67D4529CB3D260089D6DF /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA67D4429CB3D250089D6DF /* MainTabBarViewModel.swift */; };
 		7EABAB8729C0D40200182FFB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7EABAB8629C0D40200182FFB /* FirebaseAuth */; };
 		7ECCEFB129C460CA00FA4A06 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECCEFB029C460CA00FA4A06 /* AuthService.swift */; };
 		7ECCEFB429C478A200FA4A06 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECCEFB329C478A200FA4A06 /* ProfileVC.swift */; };
@@ -41,6 +44,9 @@
 		7E79D91F29BF98D000533DAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7EA67D1329C8984E0089D6DF /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		7EA67D1629C8A5590089D6DF /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
+		7EA67D1A29C9EC500089D6DF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		7EA67D1C29C9ED890089D6DF /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		7EA67D4429CB3D250089D6DF /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		7ECCEFB029C460CA00FA4A06 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		7ECCEFB329C478A200FA4A06 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		7ECCEFB529C47BDC00FA4A06 /* ProfileRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoundedButton.swift; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				7EA67D1629C8A5590089D6DF /* MainTabBarView.swift */,
+				7EA67D4429CB3D250089D6DF /* MainTabBarViewModel.swift */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -151,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				7ECCEFB029C460CA00FA4A06 /* AuthService.swift */,
+				7EA67D1C29C9ED890089D6DF /* DatabaseService.swift */,
 			);
 			path = FirebaseManager;
 			sourceTree = "<group>";
@@ -162,6 +170,7 @@
 				7ECCEFB729C481DB00FA4A06 /* ProfileItem.swift */,
 				7ECCEFB929C4883100FA4A06 /* ProfileModel.swift */,
 				7ECCEFBB29C4891100FA4A06 /* ProfileViewModel.swift */,
+				7EA67D1A29C9EC500089D6DF /* UserModel.swift */,
 			);
 			path = ProfileFeature;
 			sourceTree = "<group>";
@@ -244,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EA67D1D29C9ED890089D6DF /* DatabaseService.swift in Sources */,
 				7E5C19EB29BFC07C0067BC37 /* TextFieldModifier.swift in Sources */,
 				7E79D91B29BF98CE00533DAD /* AuthVC.swift in Sources */,
 				7ECCEFB629C47BDC00FA4A06 /* ProfileRoundedButton.swift in Sources */,
@@ -254,10 +264,12 @@
 				7E33751529C1E77D00C5A74D /* LogInVC.swift in Sources */,
 				7ECCEFB429C478A200FA4A06 /* ProfileVC.swift in Sources */,
 				7EA67D1729C8A5590089D6DF /* MainTabBarView.swift in Sources */,
+				7EA67D1B29C9EC500089D6DF /* UserModel.swift in Sources */,
 				7E5C19E629BFB9410067BC37 /* Color.swift in Sources */,
 				7ECCEFB129C460CA00FA4A06 /* AuthService.swift in Sources */,
 				7EA67D1429C8984E0089D6DF /* AuthViewModel.swift in Sources */,
 				7E79D91929BF98CE00533DAD /* TestMobileAppApp.swift in Sources */,
+				7EA67D4529CB3D260089D6DF /* MainTabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
