@@ -18,7 +18,6 @@ struct AuthVC: View {
   @State private var isTabViewShow = false
 
   var body: some View {
-    NavigationView {
       VStack {
         Text("Sign In")
           .font(.system(size: 25, weight: .semibold))
@@ -39,8 +38,6 @@ struct AuthVC: View {
               } else {
                 message = "incorrect data"
               }
-              UserDefaults.standard.set(true, forKey: "status")
-              NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
               alert.toggle()
             }
           }
@@ -59,7 +56,6 @@ struct AuthVC: View {
         let mainTabBarViewModel = MainTabBarViewModel(user: AuthService.shared.myUser!)
         MainTabBarView(viewModel: mainTabBarViewModel)
       }
-    }
   }
 
   private func textFields() -> some View {

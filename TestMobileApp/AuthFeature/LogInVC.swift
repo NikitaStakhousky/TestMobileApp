@@ -36,8 +36,6 @@ struct LogInVC: View {
             } else {
               message = "incorrect data \(failure.localizedDescription)"
             }
-            UserDefaults.standard.set(true, forKey: "status")
-            NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
             alert.toggle()
           }
         }

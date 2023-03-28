@@ -13,7 +13,7 @@ struct ProfileVC: View {
   @State var showLogin = false
 
   var body: some View {
-    ScrollView {
+    ScrollView(showsIndicators: false) {
     VStack {
       profilePhoto()
         .padding(.bottom, 20)

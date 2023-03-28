@@ -10,19 +10,18 @@ import SwiftUI
 
 struct MainTabBarView: View {
 
-    var viewModel: MainTabBarViewModel
-    @State var selectedTab: String = "person"
+  var viewModel: MainTabBarViewModel
+  @State var selectedTab: String = "person"
 
-    var tab = ["house", "heart", "cart", "bubble.left", "person"]
+  var tab = ["house", "heart", "cart", "bubble.left", "person"]
 
-    var body: some View {
-
+  var body: some View {
       ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
         TabView(selection: $selectedTab) {
           ProfileVC(viewModel: ProfileViewModel(currentUser: CurrentUser(photo: "", name: "")))
             .tag("person")
-          Text("Hello world")
-            .tag("cart")
+          SalesView(viewModel: SalesViewModel())
+            .tag("house")
         }
 
         HStack(spacing: 0) {
@@ -41,7 +40,7 @@ struct MainTabBarView: View {
         .padding(.horizontal)
 
       }
-    }
+  }
 }
 
 struct TabButton: View {

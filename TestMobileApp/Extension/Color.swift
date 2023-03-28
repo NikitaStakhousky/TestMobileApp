@@ -14,4 +14,5 @@ public extension Color {
   static let blueTint = Color(red: 37.0/255, green: 79.0/255, blue: 230.0/255)
   static let lightGray = Color(red: 128.0/255.0, green: 128.0/255.0, blue: 128.0/255.0, opacity: 1.0)
   static let backgroundGray = Color(red: 250.0/255.0, green: 249.0/255.0, blue: 255.0/255.0, opacity: 1.0)
+  static let opacityGray = Color(red: 196.0/255.0, green:  196.0/255.0, blue:  196.0/255.0, opacity: 0.8)
 }
